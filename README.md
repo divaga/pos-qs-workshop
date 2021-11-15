@@ -5,7 +5,7 @@ QuickSight with Map visualization
 
 ### Install PostgreSQL as data source
 
-Create EC2, use t3.small and use default VPC
+Create EC2 using Amazon Linux 2 AMI, use t3.small and use default VPC and open port 22 for SSH
 
 
 Install postgreSQL
