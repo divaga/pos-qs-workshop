@@ -42,7 +42,7 @@ Edit this file in PostgreSQL host:
 sudo su - postgres 
 vi /var/lib/pgsql/data/pg_hba.conf
 ```
-and allow your DMS IP address
+and allow all IP address
 ```
 # IPv4 local connections:
 host all all 0.0.0.0/00 md5
