@@ -44,11 +44,8 @@ vi /var/lib/pgsql/data/pg_hba.conf
 ```
 and allow your DMS IP address
 ```
-# Replication Instance
-host all all 12.3.4.56/00 md5
-# Allow replication connections from localhost, by a user with the
-# replication privilege.
-host replication postgres 12.3.4.56/00 md5
+# IPv4 local connections:
+host all all 0.0.0.0/00 md5
 ```
 and also this file:
 ```
@@ -61,7 +58,7 @@ listen_addresses = '*'
 
 ```
 
-Restart
+Restart as ec2-user
 ```
 sudo systemctl restart postgresql
 ```
