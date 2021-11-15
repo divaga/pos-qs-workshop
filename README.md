@@ -35,6 +35,20 @@ psql posindo -f create_table.sql
 psql posindo -f insert_data.sql
 ```
 
+### Create aggregate View
+
+Create this view
+
+```
+create view public.realisasi_alokasi as 
+select a.provinsi, a.nama_kota, a.latitude, a.longitude,
+b.nama_penerima, b.jumlah_realisasi, c.jumlah_alokasi
+from
+kota a, realisasi b, alokasi c
+where a.nama_kota = b.nama_kota
+and b.nama_kota = c.nama_kota;
+```
+
 ### Allow access 
 
 Edit this file in PostgreSQL host:
@@ -63,18 +77,6 @@ Restart as ec2-user
 sudo systemctl restart postgresql
 ```
 
-### Configure PG View
-
-Create this view
-
-```
-create view actor_summary as 
-select actor.first_name, actor.last_name,
-count(actor.actor_id) as film_count
-from actor actor ,film_actor film_actor
-where actor.actor_id = film_actor.actor_id
-group by actor.first_name, actor.last_name
-```
 
 ### Security Group
 Create new Security Group for QuickSight and allow All TCP from 0.0.0.0/00. Note down Security Group ID
