@@ -29,10 +29,10 @@ psql -c "ALTER USER postgres WITH SUPERUSER"
 
 Install sample data
 ```
-git clone https://github.com/devrimgunduz/pagila.git
-cd pagila 
-psql posindo -f pagila-schema.sql
-psql posindo -f pagila-data.sql
+git clone https://github.com/divaga/pos-qs-workshop.git
+cd pos-qs-workshop/
+psql posindo -f create_table.sql
+psql posindo -f insert_data.sql
 ```
 
 ### Allow access 
