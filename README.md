@@ -106,4 +106,4 @@ sumOver
 ) 
 ```
 
-Add those calculated field to visual and change chart type to Vertical Stacked 100% Bar Chart
+Add those calculated field to visual and change chart type to Vertical Stacked Bar Chart
