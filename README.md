@@ -91,5 +91,19 @@ Change to correct Region then go to Manage QuickSight -> Manage VPC Connection -
 Create new dataset, choose PostgreSQL and create new connection using VPC connection and disable SSL connection
 
 
+### Create visualization
 
-Create visualization
+#### Map Visualization
+Choose longitude, latitude and jumlah_realisasi
+
+#### Realisasi vs Alokasi
+Create new calculated field 
+```
+sumOver
+(
+     sum({jumlah_alokasi}), 
+     [{provinsi}]
+) 
+```
+
+Add those calculated field to visual and change chart type to Vertical Stacked 100% Bar Chart
