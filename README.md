@@ -76,13 +76,18 @@ where actor.actor_id = film_actor.actor_id
 group by actor.first_name, actor.last_name
 ```
 
+### Security Group
+Create new Security Group for QuickSight and allow All TCP from 0.0.0.0/00. Note down Security Group ID
+
+Modify PostgreSQL EC2 Security Group and allow port 5432 from QuickSight Security Group
+
 ### Configure QuickSight
 Sign up to QuickSight 
 
-Gave S3 access 
+Change to correct Region then go to Manage QuickSight -> Manage VPC Connection -> Add VPC Connection. Fill in name, VPC, subnet and Security Group ID
 
-Enable QuickSight access to Athena and S3
+Create new dataset, choose PostgreSQL and create new connection using VPC connection and disable SSL connection
 
-Add Athena as data source and disable SPICE
+
 
 Create visualization
